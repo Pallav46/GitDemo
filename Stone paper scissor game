@@ -1,0 +1,34 @@
+package com.company;
+import java.util.Random;
+import java.util.Scanner;
+public class Stone_Paper_Scissor {
+    public static void main(String[] args) {
+        int input;
+        // 0 == stone
+        // 1 == paper
+        // 2 == scissor
+        do {
+            System.out.println("Welcome to SPS Game");
+            System.out.println("Please Enter \n 0 for stone \n 1 for paper \n 2 for scissor");
+            Scanner sc = new Scanner(System.in);
+            int a = sc.nextInt();
+
+            Random b = new Random();
+            int c = b.nextInt(3);
+
+            System.out.println("You choose " + a + " Computer choose " + c);
+            if (a == c) {
+                System.out.println("Draw !!");
+            } else if (a == 0 && c == 1 || a == 1 && c == 2 || a == 2 && c == 0) {
+                System.out.println("You loose ");
+            } else {
+                System.out.println("You win!!!");
+            }
+            System.out.println("Play again press 1   Exit press 0");
+            input = sc.nextInt();
+            if (input==0){
+                System.out.println("thanks for playing!!");
+            }
+        }while (input==1);
+    }
+}
